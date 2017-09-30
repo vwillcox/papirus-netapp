@@ -1,0 +1,90 @@
+Speed Test Ran at:  29/08/2017 11:15
+Ping: 42.332 ms
+Download: 58.57 Mbit/s
+Upload: 20.48 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 11:16
+Ping: 42.091 ms
+Download: 61.45 Mbit/s
+Upload: 20.50 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 11:29
+Ping: 42.87 ms
+Download: 62.42 Mbit/s
+Upload: 20.24 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 12:06
+Ping: 61.462 ms
+Download: 44.95 Mbit/s
+Upload: 20.39 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 13:45
+Ping: 43.273 ms
+Download: 58.66 Mbit/s
+Upload: 18.57 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 14:37
+Ping: 40.576 ms
+Download: 62.97 Mbit/s
+Upload: 20.86 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 14:42
+Ping: 43.793 ms
+Download: 32.31 Mbit/s
+Upload: 11.86 Mbit/s
+----------
+Speed Test Ran at:  29/08/2017 14:44
+Ping: 42.626 ms
+Download: 48.88 Mbit/s
+Upload: 20.58 Mbit/s
+----------
+Speed Test Ran at:  26/09/2017 22:29
+Ping: 39.753 ms
+Download: 85.77 Mbit/s
+Upload: 15.75 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 06:51
+Ping: 48.812 ms
+Download: 89.39 Mbit/s
+Upload: 14.60 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 07:24
+Ping: 40.114 ms
+Download: 91.02 Mbit/s
+Upload: 20.26 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 07:31
+Ping: 41.356 ms
+Download: 86.31 Mbit/s
+Upload: 20.23 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 16:39
+Ping: 42.282 ms
+Download: 73.95 Mbit/s
+Upload: 16.80 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 16:41
+Ping: 39.275 ms
+Download: 78.75 Mbit/s
+Upload: 19.26 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 18:20
+Ping: 40.693 ms
+Download: 83.73 Mbit/s
+Upload: 19.95 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 19:42
+Ping: 42.274 ms
+Download: 87.30 Mbit/s
+Upload: 17.93 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 19:43
+Ping: 41.413 ms
+Download: 69.07 Mbit/s
+Upload: 17.10 Mbit/s
+----------
+Speed Test Ran at:  27/09/2017 19:49
+Ping: 39.01 ms
+Download: 87.37 Mbit/s
+Upload: 20.21 Mbit/s
+----------
