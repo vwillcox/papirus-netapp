@@ -13,6 +13,9 @@ EPD CODE
 -----
 # Required Software
 sudo apt-get install python-matplotlib python-nmap
+
 sudo pip_install speedtest-cli
+
 sudo pip install ipgetter
+
 sudo pip install matplotlib
