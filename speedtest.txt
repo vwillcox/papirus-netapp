@@ -1,0 +1,5 @@
+Speed Test Ran at:  30/09/2017 13:45
+Ping: 40.254 ms
+Download: 86.70 Mbit/s
+Upload: 11.96 Mbit/s
+----------

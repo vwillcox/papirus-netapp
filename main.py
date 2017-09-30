@@ -22,6 +22,7 @@ def show_menu():
 	screen.WriteAll()
 
 def speed_test():
+	screen.Clear()
 	screen.AddText("Running Speedtest now", 20, 70)
         screen.WriteAll()
         subprocess.call(shlex.split(speed_test_code))
