@@ -8,11 +8,11 @@
 # Get the date 
 now="$(date +'%d/%m/%Y %H:%M')"
 # Print the date into the speedtest file.
-printf "Speed Test Ran at:  %s\n" "$now" >> /home/pi/speedtest-cron/speedtest.txt
+printf "Speed Test Ran at:  %s\n" "$now" >> /home/pi/netapp/speedtest.txt
 # Run a simple speedtest and pipe the results into the file
-/usr/local/bin/speedtest-cli --simple >> /home/pi/speedtest-cron/speedtest.txt 2>&1
+/usr/local/bin/speedtest-cli --simple >> /home/pi/netapp/speedtest.txt 2>&1
 # Print a test delimiter into the file
-echo  "----------" >> /home/pi/speedtest-cron/speedtest.txt
+echo  "----------" >> /home/pi/netapp/speedtest.txt
 
 # Done and dusted. You have just run a speedtest.
 # The results will be in a file called speedtest.txt
