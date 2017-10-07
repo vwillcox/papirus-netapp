@@ -68,3 +68,8 @@ Ping: 35.42 ms
 Download: 84.58 Mbit/s
 Upload: 20.54 Mbit/s
 ----------
+Speed Test Ran at:  07/10/2017 17:05
+Ping: 36.163 ms
+Download: 83.87 Mbit/s
+Upload: 20.62 Mbit/s
+----------
