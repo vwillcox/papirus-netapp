@@ -115,7 +115,7 @@ if "__main__" == __name__:
 			if (menu == 0 and button1.wait_for_release(1)):
 				speed_test()
 				menu = 1
-			if (menu == 1 and button1.wait_for_release(1)):
+			if (menu == 1 and button3.wait_for_release(1)):
 				power_off()
 				menu = 0
 			if (menu == 0 and button2.wait_for_release(1)):
