@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from getip import get_lan_ip
-
 from papirus import PapirusTextPos
 import ipgetter
 import subprocess
@@ -23,7 +22,7 @@ def show_menu():
 
 def speed_test():
 	screen.Clear()
-	screen.AddText("Running Speedtest now", 20, 70)
+	screen.AddText("Running Speedtest now", 20, 70, size2)
         screen.WriteAll()
         subprocess.call(shlex.split(speed_test_code))
         screen.Clear()
@@ -66,9 +65,7 @@ if "__main__" == __name__:
 
         size1 = 11
         size2 = 17
-        #font1 = ImageFont.truetype(FONT_FILE, TEXT_FONT_SIZE1)
-        #font2 = ImageFont.truetype(FONT_FILE, TEXT_FONT_SIZE2)
-
+	dir_path = os.path.dirname(os.path.realpath(__file__))
 	int_ip = get_lan_ip()
 	myip = ipgetter.myip()
 	screen = PapirusTextPos(False)
@@ -80,10 +77,10 @@ if "__main__" == __name__:
 	button4 = Button(21, pull_up=False)
 	ext_ip = 'External: ' +  myip
 	int_ip = 'Internal: '  + int_ip
-	speed_test_log = '/home/pi/netapp/speedtest.txt'
+	speed_test_log = dir_path+'/speedtest.txt'
 	screen.Clear()
-	graph_code = '/home/pi/netapp/ImageDemo.py temp.png'
-	speed_test_code = '/home/pi/netapp/speedtest.sh'
+	graph_code = dir_path+'/ImageDemo.py temp.png'
+	speed_test_code = dir_path+'/speedtest.sh'
 	show_menu()
 	try:
 		while True:
@@ -97,3 +94,4 @@ if "__main__" == __name__:
 				show_menu()
 	except KeyboardInterrupt:
 		print ("Exiting Appliance Code")
+		screen.Clear()

@@ -30,7 +30,8 @@ from papirus import Papirus
 
 def main(argv):
     """main program - display list of images"""
-    subprocess.call(shlex.split('/home/pi/netapp/speedtest2.sh'))
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    subprocess.call(shlex.split(dir_path+'/speedtest2.sh'))
     x = 0
     with open('graph.txt') as f:
         lines = f.readlines()
