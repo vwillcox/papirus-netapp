@@ -3,7 +3,33 @@ A Network appliance for the PaPiRus from PiSupply
 
 I have now cleaned up some of the code and added a new menu to run the Appliance headless.
 
-Recent Changes (7th October 2017)
+Changes (31st December 2017)
+
+1) Added code to generate One Time Passwords. 
+2) Removed GPIPZero based button actions as native GPIO button code is more responsive
+
+If you wish to use this feature you will need to add your codes to the new veriables 
+
+google
+and
+lastpass
+
+You can change these, remove this us only one code etc.
+
+How to get your Google authenticaor code for Google Accounts: https://support.google.com/accounts/answer/185839?hl=en
+
+On this step - click "CAN'T SCAN IT" to get the code
+![alt tag](https://www.talktech.info/wp-content/uploads/2017/12/ga1.png "Google 2FA Code")
+
+You will get a code in a box, you do not need to worry about the spaces:
+
+![alt tag](https://www.talktech.info/wp-content/uploads/2017/12/ga2.png "Google 2FA Text Code")
+
+Happy new year! See you in 2018
+
+-----
+
+Previous Changes (7th October 2017)
 
 1) Added code to fetch the runtime path, now you can run this from a directory of your choosing.
 2) Fixed some of the display code so it looks a little better when running
@@ -44,7 +70,7 @@ This assumes that you have already installed all the PaPiRus bits and have the s
 # Advanced Menu
 * 1) Back to Main Menu
 * 2) Power off the Appliance
-* 3) Reboot the Appliance
+* 3) Generate OTP's
 
 
 -----
@@ -70,3 +96,4 @@ sudo pip install nmap
 
 sudo pip install matplotlib
 
+sudo pip install pyotp
