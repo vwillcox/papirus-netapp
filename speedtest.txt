@@ -73,3 +73,38 @@ Ping: 36.163 ms
 Download: 83.87 Mbit/s
 Upload: 20.62 Mbit/s
 ----------
+Speed Test Ran at:  07/10/2017 22:43
+Ping: 35.588 ms
+Download: 64.24 Mbit/s
+Upload: 18.66 Mbit/s
+----------
+Speed Test Ran at:  08/10/2017 09:42
+Ping: 38.291 ms
+Download: 66.30 Mbit/s
+Upload: 18.66 Mbit/s
+----------
+Speed Test Ran at:  08/10/2017 15:24
+Ping: 36.693 ms
+Download: 89.88 Mbit/s
+Upload: 17.02 Mbit/s
+----------
+Speed Test Ran at:  08/10/2017 19:07
+Ping: 35.021 ms
+Download: 86.32 Mbit/s
+Upload: 15.08 Mbit/s
+----------
+Speed Test Ran at:  04/11/2017 11:14
+Ping: 41.02 ms
+Download: 78.22 Mbit/s
+Upload: 20.66 Mbit/s
+----------
+Speed Test Ran at:  31/12/2017 10:22
+Ping: 35.254 ms
+Download: 84.11 Mbit/s
+Upload: 20.64 Mbit/s
+----------
+Speed Test Ran at:  31/12/2017 15:54
+Ping: 34.498 ms
+Download: 45.25 Mbit/s
+Upload: 19.34 Mbit/s
+----------

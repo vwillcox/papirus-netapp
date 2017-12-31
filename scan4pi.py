@@ -1,6 +1,6 @@
 
-#! /usr/bin/python
-# Python3 code to print IP addresses and host name of local network
+#!/usr/bin/python
+# Python code to print IP addresses and host name of local network
 # to e-ink screen
 
 import nmap
@@ -70,6 +70,7 @@ def get_all_pi(epd):
         h = epd.height
         title="Found Pi's"
         r = 25
+	subnet = '192.168.0.0/24' # Change to your Subnet if different
         # prepare for drawing
         image = Image.new('1', epd.size, WHITE)
         draw = ImageDraw.Draw(image)
@@ -79,11 +80,11 @@ def get_all_pi(epd):
         draw.text((5,5), title, fill=BLACK, font=text_font2)
         nm = nmap.PortScanner()
 
-        nm.scan('192.168.0.0/24', arguments='-sP', sudo=True)
+        nm.scan(subnet, arguments='-sP', sudo=True)
         for h in nm.all_hosts():
                 if 'mac' in nm[h]['addresses']:
                         for x in nm[h]['vendor'].keys():
-                                if x.startswith('B8:27:EB'):
+                                if x.startswith('B8:27:EB'): #Pi Lan Mac
                                         string = 'IP: ' + (nm[h]['addresses']['ipv4'])
                                         ipadd = (nm[h]['addresses']['ipv4'])
                                         draw.text((5,r), string, fill=BLACK, font=text_font1)
@@ -95,6 +96,20 @@ def get_all_pi(epd):
                                         except pxssh.ExceptionPxssh as e:
                                                 draw.text((125,r), 'Login Failed', fill=BLACK, font=text_font1)
                                         r+=15
+				if x.startswith('00:0F:13'): #known Wifi-Adaptor Mac
+					string = 'IP: ' + (nm[h]['addresses']['ipv4'])
+                                        ipadd = (nm[h]['addresses']['ipv4'])
+                                        draw.text((5,r), string, fill=BLACK, font=text_font1)
+                                        try:
+                                                s = pxssh.pxssh(options={"StrictHostKeyChecking": "no","UserKnownHostsFile": "/dev/null"})
+                                                s.login(ipadd, 'pi','raspberry')
+                                                s.logout()
+                                                draw.text((125,r), 'Login Successfull', fill=BLACK, font=text_font1)
+                                        except pxssh.ExceptionPxssh as e:
+                                                draw.text((125,r), 'Login Failed', fill=BLACK, font=text_font1)
+                                        r+=15
+
+
 
         epd.display(image)
         epd.update()

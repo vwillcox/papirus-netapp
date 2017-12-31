@@ -40,5 +40,6 @@ pip_install ascii_graph
 pip_install pexpect
 pip_install nmap
 pip_install matplotlib
+pip_install pyotp
 
 echo "All done! Enjoy"

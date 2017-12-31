@@ -1,16 +1,28 @@
 #!/usr/bin/python
 
+import RPi.GPIO as GPIO
 from getip import get_lan_ip
 from papirus import PapirusTextPos
-import ipgetter
-import subprocess
-import shlex
-import os
-import ImageFont
-from gpiozero import Button
-import ImageDemo
-import scan4pi
+import ipgetter, subprocess, shlex, os, ImageFont
+import ImageDemo, scan4pi
 from time import sleep
+import pyotp
+from datetime import datetime
+
+button1 = 16
+button2 = 26
+button3 = 20
+button4 = 21
+
+#your Google OTP Code
+google = "YOUCODEHERE"
+#Your Other code
+lastpass = "YOURCODEHERE"
+# add any more here
+
+# Set them as Time Based One Time Passcodes
+Googleotp = pyotp.TOTP(google)
+lastpassotp = pyotp.TOTP(lastpass)
 
 
 def show_menu():
@@ -27,9 +39,18 @@ def show_menu_2():
         screen.AddText("Advanced Menu", 10, 10)
         screen.AddText("1) Main Menu", 10, 40)
         screen.AddText("2) Power Off Pi", 10, 70)
-        screen.AddText("3) Reboot Pi", 10, 100)
+        screen.AddText("3) Show OTP's", 10, 100)
         screen.WriteAll()
 
+
+def show_otp():
+	timestamp = datetime.now().strftime('%H:%M:%S')
+	screen.Clear()
+	screen.AddText("Your OTP's are:", 10, 10, size2)
+	screen.AddText("Generated at: " + timestamp, 10, 40, size2)
+	screen.AddText("vincent@willcox.tk: " + Googleotp.now(), 10, 70, size1)
+	screen.AddText("LastPass is now: " + lastpassotp.now(), 10, 100, size1)
+	screen.WriteAll()
 
 def speed_test():
 	screen.Clear()
@@ -90,6 +111,12 @@ if "__main__" == __name__:
 
         if '' == FONT_FILE:
                 raise 'no font file found'
+
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(button1, GPIO.IN)
+	GPIO.setup(button2, GPIO.IN)
+	GPIO.setup(button3, GPIO.IN)
+	GPIO.setup(button4, GPIO.IN)
 	menu = 0
         size1 = 11
         size2 = 17
@@ -99,10 +126,6 @@ if "__main__" == __name__:
 	screen = PapirusTextPos(False)
 	screen.AddText("Starting Appliance", 20, 70, size2, FONT_FILE)
 	screen.WriteAll()
-	button1 = Button(16, pull_up=False)
-	button2 = Button(26, pull_up=False)
-	button3 = Button(20, pull_up=False)
-	button4 = Button(21, pull_up=False)
 	ext_ip = 'External: ' +  myip
 	int_ip = 'Internal: '  + int_ip
 	speed_test_log = dir_path+'/speedtest.txt'
@@ -112,25 +135,28 @@ if "__main__" == __name__:
 	show_menu()
 	try:
 		while True:
-			if (menu == 0 and button1.wait_for_release(1)):
+			#Primary Menu Options
+			if (menu == 0 and GPIO.input(button1) == False) :
 				speed_test()
 				menu = 1
-			if (menu == 1 and button3.wait_for_release(1)):
+			if (menu == 0 and GPIO.input(button2) == False) :
+                                graph_it()
+                                menu = 1
+			if (menu == 0 and GPIO.input(button3) == False) :
+                                scan4it()
+                                menu = 1
+                        if (menu == 0 and GPIO.input(button4) == False) :
+                                show_menu_2()
+                                menu = 1
+
+			#Advanced Meny Options
+			if (menu == 1 and GPIO.input(button3) == False) :
 				power_off()
 				menu = 0
-			if (menu == 0 and button2.wait_for_release(1)):
-				graph_it()
-				menu = 1
-			if (menu == 1 and button2.wait_for_release(1)):
-				reboot_it()
+			if (menu == 1 and GPIO.input(button2) == False) :
+				show_otp()
 				menu = 0
-			if (menu == 0 and button3.wait_for_release(1)):
-				scan4it()
-				menu = 1
-			if (menu == 0 and button4.wait_for_release(1)):
-				show_menu_2()
-				menu = 1
-			if (menu == 1 and button4.wait_for_release(1)):
+			if (menu == 1 and GPIO.input(button4) == False) :
 				show_menu()
 				menu = 0
 
