@@ -78,24 +78,7 @@ This assumes that you have already installed all the PaPiRus bits and have the s
 -----
 # Required Software
 
+```
 sudo apt-get install python-matplotlib python-nmap
-
-sudo pip install matplotlib
-
-sudo pip install gpiozero
-
-sudo pip install speedtest-cli
-
-sudo pip install ipgetter
-
-sudo pip install statistics
-
-sudo pip install ascii_graph
-
-sudo pip install pexpect
-
-sudo pip install nmap
-
-sudo pip install matplotlib
-
-sudo pip install pyotp
+sudo pip install -r requirements.txt
+```
