@@ -77,7 +77,7 @@ This assumes that you have already installed all the PaPiRus bits and have the s
 
 -----
 # Required Software
-
+Copy and paste the following two lines to install all dependencies.
 ```
 sudo apt-get install python-matplotlib python-nmap
 sudo pip install -r requirements.txt
