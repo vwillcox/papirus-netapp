@@ -1,0 +1,10 @@
+matplotlib
+gpiozero
+speedtest-cli
+ipgetter
+statistics
+ascii_graph
+pexpect
+nmap
+matplotlib
+pyotp

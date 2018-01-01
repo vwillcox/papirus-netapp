@@ -13,13 +13,6 @@ fi
   function pause(){
    read -p "$*"
 }
- 
-function pip_install {
-   local package_name=$1
-   echo "Installing $package_name"
-   pip install $package_name 2>&1 >/dev/null
-   pip3 install $package_name 2>&1 >/dev/null
-}
 
 echo "Welcome to The PaPiRus Netapp Appliance Installer"
 pause 'Press [Enter] to install the required bits and pieces or CTRL+C to stop...'
@@ -32,14 +25,7 @@ if [ "$?" -ne 0 ]; then
 fi
 echo "Done"
 echo "Now installing python modules"
-pip_install gpiozero
-pip_install speedtest-cli
-pip_install ipgetter
-pip_install statistics
-pip_install ascii_graph
-pip_install pexpect
-pip_install nmap
-pip_install matplotlib
-pip_install pyotp
+pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 echo "All done! Enjoy"
