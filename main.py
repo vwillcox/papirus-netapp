@@ -5,7 +5,8 @@ from getip import get_lan_ip
 from papirus import PapirusTextPos
 import ipgetter, subprocess, shlex, os
 from PIL import ImageFont
-import PlotGraph, scan4pi
+from lib import PlotGraph
+import scan4pi
 from time import sleep
 import pyotp
 from datetime import datetime
@@ -24,7 +25,6 @@ lastpass = "YOURCODEHERE"
 # Set them as Time Based One Time Passcodes
 Googleotp = pyotp.TOTP(google)
 lastpassotp = pyotp.TOTP(lastpass)
-
 
 def show_menu():
 	screen.Clear()
@@ -130,10 +130,10 @@ if "__main__" == __name__:
 	screen.WriteAll()
 	ext_ip = 'External: ' +  myip
 	int_ip = 'Internal: '  + int_ip
-	speed_test_log = dir_path+'/speedtest.txt'
+	speed_test_log = dir_path+'/files/speedtest.txt'
 	screen.Clear()
-	graph_code = dir_path+'/ImageDemo.py temp.png'
-	speed_test_code = dir_path+'/speedtest.sh'
+	graph_code = dir_path+'/lib/PlotGraph.py images/temp.png'
+	speed_test_code = dir_path+'/lib/speedtest.sh'
 	show_menu()
 	try:
 		while True:

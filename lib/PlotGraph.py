@@ -31,13 +31,14 @@ from papirus import Papirus
 def main(argv):
     """main program - display list of images"""
     dir_path = os.path.dirname(os.path.realpath(__file__))
+    app_path = os.path.abspath(os.path.join(dir_path, os.pardir))
     subprocess.call(shlex.split(dir_path+'/speedtest2.sh'))
     x = 0
-    with open('graph.txt') as f:
+    with open(app_path+'/files/graph.txt') as f:
         lines = f.readlines()
         y = [line.split()[0] for line in lines]
 
-    with open('graph2.txt') as f2:
+    with open(app_path+'/files/graph2.txt') as f2:
         lines = f2.readlines()
         y2 = [line.split()[0] for line in lines]
         #x = [x++1 for line in lines]
@@ -49,7 +50,7 @@ def main(argv):
     ax1.plot(y2, c='b', label='Up')
     leg = ax1.legend()
     fig.set_size_inches(3.8, 2.5)
-    fig.savefig('temp.png', dpi=75)
+    fig.savefig(app_path+'/images/temp.png', dpi=75)
 
 
     epd = Papirus()
@@ -58,7 +59,7 @@ def main(argv):
 
     #print('panel = {p:s} {w:d} x {h:d}  version={v:s} COG={g:d} FILM={f:d}'.format(p=epd.panel, w=epd.width, h=epd.height, v=epd.version, g=epd.cog, f=epd.film))
 
-    display_file(epd, 'temp.png')
+    display_file(epd, app_path+'/images/temp.png')
 
 
 def display_file(epd, file_name):
