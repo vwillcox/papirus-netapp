@@ -121,7 +121,8 @@ if "__main__" == __name__:
 	menu = 0
         size1 = 11
         size2 = 17
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	#dir_path = os.path.dirname(os.path.realpath(__file__))
+        dir_path = os.path.dirname(os.path.abspath(__file__))
 	int_ip = get_lan_ip()
 	myip = ipgetter.myip()
 	screen = PapirusTextPos(False)
