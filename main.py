@@ -5,7 +5,7 @@ from getip import get_lan_ip
 from papirus import PapirusTextPos
 import ipgetter, subprocess, shlex, os
 from PIL import ImageFont
-import ImageDemo, scan4pi
+import PlotGraph, scan4pi
 from time import sleep
 import pyotp
 from datetime import datetime
@@ -75,7 +75,7 @@ def speed_test():
         screen.WriteAll()
 
 def graph_it():
-	ImageDemo.main('temp.png')
+	PlotGraph.main('temp.png')
 
 def scan4it():
 	scan4pi.main()
