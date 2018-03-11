@@ -5,8 +5,7 @@ from getip import get_lan_ip
 from papirus import PapirusTextPos
 import ipgetter, subprocess, shlex, os
 from PIL import ImageFont
-from lib import PlotGraph
-import scan4pi
+from lib import PlotGraph, scan4pi
 from time import sleep
 import pyotp
 from datetime import datetime
