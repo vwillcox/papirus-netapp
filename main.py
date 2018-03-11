@@ -140,13 +140,13 @@ if "__main__" == __name__:
 			#Primary Menu Options
 			if (menu == 0 and GPIO.input(button1) == False) :
 				speed_test()
-				menu = 1
+				menu = 0
 			if (menu == 0 and GPIO.input(button2) == False) :
                                 graph_it()
-                                menu = 1
+                                menu = 0
 			if (menu == 0 and GPIO.input(button3) == False) :
                                 scan4it()
-                                menu = 1
+                                menu = 0
                         if (menu == 0 and GPIO.input(button4) == False) :
                                 show_menu_2()
                                 menu = 1
@@ -154,10 +154,10 @@ if "__main__" == __name__:
 			#Advanced Meny Options
 			if (menu == 1 and GPIO.input(button3) == False) :
 				power_off()
-				menu = 0
+				menu = 1
 			if (menu == 1 and GPIO.input(button2) == False) :
 				show_otp()
-				menu = 0
+				menu = 1
 			if (menu == 1 and GPIO.input(button4) == False) :
 				show_menu()
 				menu = 0

@@ -67,7 +67,7 @@ def main():
       speedtests.append(speedtest)
       speedtest = read_speedtest(file)
   
-  #speedtests = sorted(speedtests, key=lambda speedtest: speedtest['datetime'])
+  speedtests = sorted(speedtests, key=lambda speedtest: speedtest['datetime'])
   
   print 'Speedtest results for period from ' + datetime.strftime(speedtests[0]['datetime'], '%d/%m/%Y %H:%M') + ' to ' + datetime.strftime(speedtests[-1]['datetime'], '%d/%m/%Y %H:%M')
   print
