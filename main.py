@@ -3,7 +3,8 @@
 import RPi.GPIO as GPIO
 from getip import get_lan_ip
 from papirus import PapirusTextPos
-import ipgetter, subprocess, shlex, os, ImageFont
+import ipgetter, subprocess, shlex, os
+from PIL import ImageFont
 import ImageDemo, scan4pi
 from time import sleep
 import pyotp

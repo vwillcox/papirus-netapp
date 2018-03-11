@@ -5,6 +5,6 @@ ipgetter
 statistics
 ascii_graph
 pexpect
-nmap
+python-nmap
 matplotlib
 pyotp
