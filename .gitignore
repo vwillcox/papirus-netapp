@@ -1,4 +1,2 @@
 *.pyc
-graph.txt
-graph2.txt
-speedtest.txt
+*.txt
