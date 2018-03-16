@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
 import RPi.GPIO as GPIO
-from getip import get_lan_ip
+#from getip import get_lan_ip
 from papirus import PapirusTextPos
 import ipgetter, subprocess, shlex, os
 from PIL import ImageFont
-from lib import PlotGraph, scan4pi
+from lib import PlotGraph, scan4pi, getip
 from time import sleep
 import pyotp
 from datetime import datetime
@@ -39,7 +39,7 @@ def show_menu_2():
         screen.AddText("Advanced Menu", 10, 10)
         screen.AddText("1) Main Menu", 10, 40)
         screen.AddText("2) Power Off Pi", 10, 70)
-        screen.AddText("3) Show OTP's", 10, 100)
+        screen.AddText("3) Generate OTP's", 10, 100)
         screen.WriteAll()
 
 
@@ -122,7 +122,7 @@ if "__main__" == __name__:
         size2 = 17
 	#dir_path = os.path.dirname(os.path.realpath(__file__))
         dir_path = os.path.dirname(os.path.abspath(__file__))
-	int_ip = get_lan_ip()
+	int_ip = getip.get_lan_ip()
 	myip = ipgetter.myip()
 	screen = PapirusTextPos(False)
 	screen.AddText("Starting Appliance", 20, 70, size2, FONT_FILE)
