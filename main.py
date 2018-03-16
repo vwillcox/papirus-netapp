@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
 import RPi.GPIO as GPIO
-from getip import get_lan_ip
+#from getip import get_lan_ip
 from papirus import PapirusTextPos
 import ipgetter, subprocess, shlex, os
 from PIL import ImageFont
-import ImageDemo, scan4pi
+from lib import PlotGraph, scan4pi, getip
 from time import sleep
 import pyotp
 from datetime import datetime
@@ -25,7 +25,6 @@ lastpass = "YOURCODEHERE"
 Googleotp = pyotp.TOTP(google)
 lastpassotp = pyotp.TOTP(lastpass)
 
-
 def show_menu():
 	screen.Clear()
 	screen.AddText("Main Menu", 10, 10)
@@ -40,7 +39,7 @@ def show_menu_2():
         screen.AddText("Advanced Menu", 10, 10)
         screen.AddText("1) Main Menu", 10, 40)
         screen.AddText("2) Power Off Pi", 10, 70)
-        screen.AddText("3) Show OTP's", 10, 100)
+        screen.AddText("3) Generate OTP's", 10, 100)
         screen.WriteAll()
 
 
@@ -75,7 +74,7 @@ def speed_test():
         screen.WriteAll()
 
 def graph_it():
-	ImageDemo.main('temp.png')
+	PlotGraph.main('temp.png')
 
 def scan4it():
 	scan4pi.main()
@@ -123,17 +122,17 @@ if "__main__" == __name__:
         size2 = 17
 	#dir_path = os.path.dirname(os.path.realpath(__file__))
         dir_path = os.path.dirname(os.path.abspath(__file__))
-	int_ip = get_lan_ip()
+	int_ip = getip.get_lan_ip()
 	myip = ipgetter.myip()
 	screen = PapirusTextPos(False)
 	screen.AddText("Starting Appliance", 20, 70, size2, FONT_FILE)
 	screen.WriteAll()
 	ext_ip = 'External: ' +  myip
 	int_ip = 'Internal: '  + int_ip
-	speed_test_log = dir_path+'/speedtest.txt'
+	speed_test_log = dir_path+'/files/speedtest.txt'
 	screen.Clear()
-	graph_code = dir_path+'/ImageDemo.py temp.png'
-	speed_test_code = dir_path+'/speedtest.sh'
+	graph_code = dir_path+'/lib/PlotGraph.py images/temp.png'
+	speed_test_code = dir_path+'/lib/speedtest.sh'
 	show_menu()
 	try:
 		while True:
