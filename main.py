@@ -3,7 +3,9 @@
 import RPi.GPIO as GPIO
 #from getip import get_lan_ip
 from papirus import PapirusTextPos
-import ipgetter, subprocess, shlex, os
+import subprocess, shlex, os
+#Library IPGetting is missing switch to IPGetter2 and use compatibility mode
+from ipgetter2 import ipgetter1 as ipgetter
 from PIL import ImageFont
 from lib import PlotGraph, scan4pi, getip
 from time import sleep
